@@ -5,6 +5,9 @@ import styles from './Jogos.module.css';
 import persona5Image from '../../assets/persona5.jpg';
 import persona4Image from '../../assets/persona4.jpg';
 import persona3Image from '../../assets/persona3.png';
+import persona5stImage from '../../assets/persona5strikers.jpg'
+import persona4auImage from '../../assets/persona4au.jpg'
+import personaq2Image from '../../assets/personaq2.jpg'
 
 // Importando imagens dos spin-offs (use fallback se não existirem)
 // Para imagens que não existem, vamos usar as principais como fallback
@@ -74,7 +77,7 @@ const gamesData = [
     year: "2020",
     platform: ["PS4", "Switch", "PC"],
     rating: "87/100",
-    image: require('../../assets/persona5strikers.jpg').default || persona5Image, // Usando novo nome
+    image: require('../../assets/persona5strikers.jpg').default || persona5stImage, 
     description: "Sequência de Persona 5 com combate musou e uma nova jornada pelos feriados de verão.",
     color: "#ff3366",
     developer: "Omega Force, Atlus",
@@ -93,7 +96,7 @@ const gamesData = [
     year: "2013",
     platform: ["Arcade", "PS3", "Xbox 360"],
     rating: "85/100",
-    image: require('../../assets/persona4au.jpg').default || persona4Image, // Usando novo nome
+    image: require('../../assets/persona4au.jpg').default || persona4auImage, 
     description: "Jogo de luta que continua a história de Persona 3 e 4 com um torneio sobrenatural.",
     color: "#ff9900",
     developer: "Arc System Works, Atlus",
@@ -112,7 +115,7 @@ const gamesData = [
     year: "2018",
     platform: ["3DS"],
     rating: "82/100",
-    image: require('../../assets/personaq2.jpg').default || persona5Image, // Usando novo nome
+    image: require('../../assets/personaq2.jpg').default || personaq2Image, 
     description: "Crossover com Persona 3, 4 e 5 em um mundo cinematográfico com gameplay de dungeon crawler.",
     color: "#9933cc",
     developer: "Atlus",
