@@ -47,8 +47,9 @@ bash
 # Clone o repositório
 git clone https://github.com/seu-usuario/Site-personawiki..git
 
-# Acesse a pasta do projeto
-cd Site-personawiki
+# Acesse a pasta do projeto(importante)
+(coloque tudo dentro de uma pasta no vscode e nomeie ela site-persona ou oque voce preferir)
+cd site-persona
 
 # Instale as dependências
 npm install
