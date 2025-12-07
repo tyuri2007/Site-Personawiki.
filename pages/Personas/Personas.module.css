@@ -1,0 +1,252 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: transparent !important;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(145deg, 
+    rgba(20, 20, 50, 0.8), 
+    rgba(30, 30, 70, 0.8)
+  );
+  border-radius: 20px;
+  border: 3px solid #00a2ff;
+  box-shadow: 0 10px 30px rgba(0, 162, 255, 0.3);
+}
+
+.title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 4.5rem; /* Reduzido de 5rem */
+  color: #00a2ff !important;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 1rem;
+  text-shadow: 5px 5px 0 #000;
+}
+
+.subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem; /* Reduzido de 1.3rem */
+  color: #00a2ff !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.filterSection {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 0, 60, 0.2);
+  border: 2px solid #ff003c;
+  color: white !important;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: skew(-5deg);
+}
+
+.filterButton:hover {
+  background: rgba(255, 0, 60, 0.4);
+  transform: skew(-5deg) translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 0, 60, 0.4);
+}
+
+.activeFilter {
+  background: #ff003c !important;
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.7) !important;
+  transform: skew(-5deg) scale(1.1) !important;
+}
+
+.personasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: rgba(20, 20, 50, 0.4);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.personaCard {
+  background: linear-gradient(145deg, 
+    rgba(30, 30, 70, 0.9), 
+    rgba(20, 20, 50, 0.9)
+  ) !important;
+  border: 3px solid;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  min-height: 500px; /* Altura fixa para consistência */
+  display: flex;
+  flex-direction: column;
+}
+
+.personaCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px var(--card-color, #ff003c);
+}
+
+.personaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gameBadge {
+  padding: 0.3rem 0.8rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: white !important;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.arcana {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #00a2ff !important;
+  background: rgba(0, 162, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+}
+
+/* CONTÊINER DE IMAGEM CORRIGIDO */
+.imageContainer {
+  width: 100%;
+  height: 200px; /* Altura fixa */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.personaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantém proporção e cobre o container */
+  object-position: center; /* Centraliza a imagem */
+  transition: transform 0.5s;
+}
+
+.personaCard:hover .personaImage {
+  transform: scale(1.1);
+}
+
+.personaName {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #000;
+  color: inherit !important;
+  min-height: 60px; /* Altura fixa para nomes */
+  display: flex;
+  align-items: center;
+}
+
+.personaDescription {
+  color: #e0e0ff !important;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  flex-grow: 1; /* Faz a descrição ocupar espaço disponível */
+}
+
+.personaFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto; /* Empurra para o final do card */
+}
+
+.personaType {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #ffcc00 !important;
+  background: rgba(255, 204, 0, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+}
+
+.infoSection {
+  background: linear-gradient(145deg, 
+    rgba(0, 162, 255, 0.15), 
+    rgba(20, 20, 50, 0.8)
+  ) !important;
+  border: 3px solid #00a2ff;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 3rem;
+}
+
+.sectionTitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem; /* Reduzido de 1.8rem */
+  color: #00a2ff !important;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.infoCard {
+  background: linear-gradient(145deg, 
+    rgba(30, 30, 70, 0.9), 
+    rgba(20, 20, 50, 0.9)
+  ) !important;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid #ff003c;
+  transition: all 0.3s;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 0, 60, 0.3);
+}
+
+.infoCard h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem; /* Reduzido de 1rem */
+  color: #ff003c !important;
+  margin-bottom: 1rem;
+}
+
+.infoCard p {
+  color: #e0e0ff !important;
+  line-height: 1.6;
+}

@@ -1,0 +1,354 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+}
+
+.heroSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(10, 10, 42, 0.9), rgba(10, 10, 42, 0.9)), 
+              url('../../assets/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-bottom: 4px solid #ff003c;
+}
+
+.heroTitle {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 5rem;
+  color: #ff003c;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-bottom: 1rem;
+  text-shadow: 6px 6px 0 #000, 0 0 40px rgba(255, 0, 60, 0.8);
+  animation: heroPulse 3s infinite alternate;
+}
+
+@keyframes heroPulse {
+  0% {
+    text-shadow: 6px 6px 0 #000, 0 0 20px rgba(255, 0, 60, 0.6);
+  }
+  100% {
+    text-shadow: 6px 6px 0 #000, 0 0 50px rgba(255, 0, 60, 1), 0 0 70px rgba(255, 0, 60, 0.6);
+  }
+}
+
+.heroSubtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #00a2ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sectionTitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.2rem;
+  color: #ff003c;
+  text-align: center;
+  margin: 4rem 0 2rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff003c, #00a2ff);
+  margin: 1rem auto;
+}
+
+.introSection {
+  margin-bottom: 4rem;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.introCard {
+  background: linear-gradient(145deg, rgba(10, 10, 42, 0.8), rgba(26, 26, 58, 0.8));
+  border: 3px solid #00a2ff;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s;
+  backdrop-filter: blur(10px);
+}
+
+.introCard:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: 0 20px 40px rgba(0, 162, 255, 0.3);
+  border-color: #ff003c;
+}
+
+.introCard h3 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8rem;
+  color: #00a2ff;
+  margin-bottom: 1rem;
+}
+
+.introCard p {
+  color: #e0e0ff;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.timelineSection {
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #ff003c, #00a2ff, #ffcc00);
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 3rem;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff003c;
+  border: 4px solid #000;
+}
+
+.timelineYear {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ffcc00;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 204, 0, 0.1);
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.timelineContent {
+  background: rgba(10, 10, 42, 0.7);
+  border: 2px solid #ff003c;
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.timelineContent:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(255, 0, 60, 0.3);
+}
+
+.timelineContent h3 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8rem;
+  color: #00a2ff;
+  margin-bottom: 0.8rem;
+}
+
+.timelineContent p {
+  color: #e0e0ff;
+  line-height: 1.6;
+}
+
+.featuresSection {
+  margin-bottom: 4rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background: linear-gradient(145deg, rgba(10, 10, 42, 0.9), rgba(26, 26, 58, 0.9));
+  border: 3px solid;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.featureCard:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(255, 0, 60, 0.3);
+}
+
+.featureIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.5rem;
+  color: white;
+  transition: all 0.3s;
+}
+
+.featureCard:hover .featureIcon {
+  transform: rotate(20deg) scale(1.2);
+}
+
+.featureCard h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.featureCard p {
+  color: #e0e0ff;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.teamSection {
+  margin-bottom: 4rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.teamCard {
+  background: linear-gradient(145deg, rgba(10, 10, 42, 0.8), rgba(26, 26, 58, 0.8));
+  border-top: 5px solid;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+
+.teamCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 0, 60, 0.3);
+}
+
+.memberColor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  transition: height 0.3s;
+}
+
+.teamCard:hover .memberColor {
+  height: 100%;
+  opacity: 0.1;
+}
+
+.memberName {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 1.5rem 0 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.memberRole {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.memberContribution {
+  color: #e0e0ff;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.legacySection {
+  background: rgba(0, 162, 255, 0.1);
+  border: 3px solid #00a2ff;
+  padding: 3rem;
+  border-radius: 25px;
+  margin-bottom: 4rem;
+}
+
+.legacyText {
+  color: #e0e0ff;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(10, 10, 42, 0.8);
+  border-radius: 15px;
+  border: 2px solid #ff003c;
+  min-width: 150px;
+  transition: all 0.3s;
+}
+
+.stat:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 0, 60, 0.4);
+}
+
+.statNumber {
+  display: block;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3rem;
+  color: #ff003c;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #00a2ff;
+  text-transform: uppercase;
+}

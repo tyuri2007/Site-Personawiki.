@@ -1,0 +1,660 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 5rem;
+  color: #ff003c;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  margin-bottom: 1rem;
+  text-shadow: 6px 6px 0 #000, 0 0 30px rgba(255, 0, 60, 0.7);
+  animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 6px 6px 0 #000, 0 0 20px rgba(255, 0, 60, 0.5);
+  }
+  100% {
+    text-shadow: 6px 6px 0 #000, 0 0 40px rgba(255, 0, 60, 0.9), 0 0 60px rgba(255, 0, 60, 0.5);
+  }
+}
+
+.subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.3rem;
+  color: #00a2ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+
+/* FILTER SECTION */
+.filterSection {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: 1rem 2rem;
+  background: rgba(255, 0, 60, 0.2);
+  border: 3px solid #ff003c;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: skew(-5deg);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.filterButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.filterButton:hover::before {
+  left: 100%;
+}
+
+.filterButton:hover {
+  background: rgba(255, 0, 60, 0.4);
+  transform: skew(-5deg) translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 0, 60, 0.4);
+}
+
+.activeFilter {
+  background: #ff003c !important;
+  box-shadow: 0 0 30px rgba(255, 0, 60, 0.8) !important;
+  transform: skew(-5deg) scale(1.1) !important;
+}
+
+/* GAMES GRID */
+.gamesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gameCard {
+  background: linear-gradient(145deg, rgba(10, 10, 42, 0.9), rgba(26, 26, 58, 0.9));
+  border: 3px solid;
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.gameCard:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 25px 50px rgba(255, 0, 60, 0.4) !important;
+}
+
+.gameCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff003c, #00a2ff, #ffcc00);
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.gameCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* GAME HEADER */
+.gameHeader {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.gameImageContainer {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+}
+
+.gameImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid white;
+  transition: all 0.4s;
+}
+
+.gameCard:hover .gameImage {
+  transform: scale(1.1) rotate(5deg);
+  border-color: inherit;
+}
+
+.gameRating {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: white;
+  border: 3px solid white;
+  transform: rotate(15deg);
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.gameCard:hover .gameRating {
+  transform: rotate(0deg) scale(1.2);
+}
+
+/* GAME INFO */
+.gameInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.gameTitle {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000;
+  word-wrap: break-word;
+}
+
+.gameMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.gameYear, .gameDeveloper, .gameHours {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.gameYear {
+  color: #00a2ff;
+}
+
+.gameDeveloper {
+  color: #ffcc00;
+}
+
+.gameHours {
+  color: #ff003c;
+}
+
+.gameType {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 204, 0, 0.2);
+  border: 2px solid #ffcc00;
+  border-radius: 5px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #ffcc00;
+  margin-top: 0.5rem;
+}
+
+/* GAME DESCRIPTION */
+.gameDescription {
+  color: #e0e0ff;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border-left: 4px solid;
+  border-left-color: inherit;
+  flex-grow: 0;
+}
+
+/* GAME PLATFORMS */
+.gamePlatforms {
+  margin-bottom: 1.5rem;
+}
+
+.gamePlatforms h4 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  color: #00a2ff;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.platformList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.platformTag {
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #e0e0ff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.platformTag:hover {
+  background: rgba(255, 0, 60, 0.3);
+  transform: translateY(-2px);
+}
+
+/* GAME FEATURES */
+.gameFeatures {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.gameFeatures h4 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  color: #00a2ff;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.gameFeatures ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.gameFeatures li {
+  color: #e0e0ff;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.gameFeatures li::before {
+  content: '✦';
+  color: inherit;
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+}
+
+/* GAME FOOTER */
+.gameFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.gameGenre {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #ffcc00;
+  background: rgba(255, 204, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detailsButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+}
+
+.detailsButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+/* MODAL STYLES - PARTE QUE ESTAVA FALTANDO */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modalContent {
+  background: linear-gradient(145deg, #0a0a2a, #1a1a3a);
+  border: 4px solid;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalAppear 0.3s ease-out;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ff003c;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.closeButton:hover {
+  background: #ff3366;
+  transform: rotate(90deg);
+}
+
+.modalHeader {
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.modalTitle {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: #ff003c;
+}
+
+.modalYear {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #aaa;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.modalBody {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.modalImageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modalImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid white;
+}
+
+.modalStats {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statItem:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.statLabel {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  max-width: 60%;
+}
+
+.modalDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modalDetails h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #00a2ff;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.modalDetails p {
+  color: #e0e0ff;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.modalPlatforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.modalPlatformTag {
+  padding: 0.6rem 1rem;
+  background: rgba(255, 0, 60, 0.2);
+  border: 2px solid #ff003c;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.modalFooter {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.modalCloseBtn {
+  padding: 1rem 2rem;
+  background: #ff003c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modalCloseBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+    letter-spacing: 4px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .gameHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .gameImageContainer {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+  }
+  
+  .gameTitle {
+    font-size: 1.5rem;
+  }
+  
+  .modalBody {
+    grid-template-columns: 1fr;
+  }
+  
+  .modalImage {
+    height: 200px;
+  }
+  
+  .modalTitle {
+    font-size: 2rem;
+  }
+  
+  .gamesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .gameCard {
+    padding: 1.2rem;
+  }
+  
+  .gameFooter {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .gameGenre {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .detailsButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .filterSection {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filterButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .gamesGrid {
+    grid-template-columns: 1fr;
+  }
+}

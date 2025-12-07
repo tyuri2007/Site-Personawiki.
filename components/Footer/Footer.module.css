@@ -1,0 +1,121 @@
+.footer {
+  background: linear-gradient(180deg, #0a0a2a 0%, #1a1a3a 100%);
+  border-top: 3px solid #00a2ff;
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.logoSection {
+  text-align: center;
+}
+
+.footerLogo {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2.5rem;
+  color: #ff003c;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.footerLogo span {
+  color: #00a2ff;
+}
+
+.tagline {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.links h3,
+.social h3 {
+  color: #00a2ff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.linkList {
+  list-style: none;
+}
+
+.linkList li {
+  margin-bottom: 0.8rem;
+}
+
+.linkList a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.linkList a:hover {
+  color: #ff003c;
+}
+
+.linkList a::before {
+  content: '→';
+  color: #00a2ff;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 0, 60, 0.2);
+  border: 2px solid #ff003c;
+  border-radius: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.socialIcon:hover {
+  background: #ff003c;
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 5px 15px rgba(255, 0, 60, 0.4);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.copyright a {
+  color: #00a2ff;
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  color: #ff003c;
+}
