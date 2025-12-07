@@ -1,4 +1,4 @@
-# Personawiki.
+# Personawiki
 é um site informativo desenvolvido em React que serve como uma enciclopédia digital completa sobre a famosa série de jogos Persona e Shin Megami Tensei. Este projeto oferece uma experiência imersiva para fãs e curiosos que desejam explorar o rico universo dessas franquias de RPG.
 
 ✨ Características Principais
@@ -56,7 +56,7 @@ npm install
 # Execute o servidor de desenvolvimento
 npm start
 
-
+#
 
 📱 Responsividade
 O site foi desenvolvido com mobile-first approach, garantindo uma experiência otimizada em:
