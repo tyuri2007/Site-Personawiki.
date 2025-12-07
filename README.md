@@ -55,6 +55,9 @@ npm install
 
 # Execute o servidor de desenvolvimento
 npm start
+
+
+
 📱 Responsividade
 O site foi desenvolvido com mobile-first approach, garantindo uma experiência otimizada em:
 
