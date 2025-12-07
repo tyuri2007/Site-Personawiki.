@@ -52,7 +52,7 @@ git clone https://github.com/seu-usuario/Site-personawiki..git
 cd site-persona
 
 # Instale as dependências
-npm install
+npm install (coloque o react router tbm)
 
 # Execute o servidor de desenvolvimento
 npm start
