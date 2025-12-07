@@ -1,10 +1,59 @@
 .appContainer {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .pageContent {
-flex: 1;
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Para tablets (768px a 1024px) */
+@media screen and (max-width: 1024px) {
+  .pageContent {
+    padding: 0 15px;
+  }
+}
+
+/* Para tablets menores e celulares grandes (576px a 768px) */
+@media screen and (max-width: 768px) {
+  .appContainer {
+    min-height: calc(100vh - 60px); /* Ajuste se tiver navbar/footer fixos */
+  }
+  
+  .pageContent {
+    padding: 0 10px;
+    margin-top: 10px; /* Espaço extra para navbar fixa em mobile */
+  }
+}
+
+/* Para celulares (até 576px) */
+@media screen and (max-width: 576px) {
+  .appContainer {
+    min-height: calc(100vh - 50px); /* Ajuste menor para mobile */
+  }
+  
+  .pageContent {
+    padding: 0 5px;
+    margin-top: 5px;
+  }
+}
+
+/* Para telas muito pequenas (até 375px) */
+@media screen and (max-width: 375px) {
+  .pageContent {
+    padding: 0 2px;
+  }
+}
+
+/* Para telas grandes (acima de 1200px) - opcional */
+@media screen and (min-width: 1200px) {
+  .pageContent {
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 0 auto;
+  }
 }
